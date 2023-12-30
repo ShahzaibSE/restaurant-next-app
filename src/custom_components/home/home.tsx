@@ -49,6 +49,7 @@ export default function HomeComponent() {
                 price={price}
                 resturant_name={resturant_name}
                 imageUrl={imageUrl}
+                quantity={1}
               />
             );
           }

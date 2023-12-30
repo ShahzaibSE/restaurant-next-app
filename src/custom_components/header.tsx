@@ -23,7 +23,7 @@ export default function Header() {
             <Heart />
           </Button>
         </Link>
-        <Link href={"#"}>
+        <Link href={"/cart"}>
           <Button className="rounded-full w-12 h-12">
             <ShoppingCart />
           </Button>
