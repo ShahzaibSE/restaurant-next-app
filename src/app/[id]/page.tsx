@@ -19,7 +19,7 @@ export default async function getProduct({
   return (
     <main className="min-h-screen px-12 py-24 xl:p-24">
       <ProductDetailComponent
-        id={product!.id}
+        id={product!.id === undefined ? 1 : product!.id}
         title={product!.title}
         description={product!.description}
         rating={product!.rating}
