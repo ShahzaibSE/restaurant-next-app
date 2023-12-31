@@ -6,7 +6,17 @@ import {
   ShoppingCart,
   Heart,
   Search,
+  ChevronDown,
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   return (
@@ -18,6 +28,28 @@ export default function Header() {
       </Link>
       <div className="hidden xl:flex xl:flex-row xl:justify-between xl:items-center gap-4">
         {/* <Link href={"#"}>Categories</Link> */}
+        <div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">
+                Categories <ChevronDown />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuRadioGroup value="bottom">
+                <DropdownMenuRadioItem value="top">
+                  Salad
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="bottom">
+                  Steak
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="right">
+                  Chicken
+                </DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
         <Link href={"#"}>
           <Button className="rounded-full w-12 h-12">
             <Heart />

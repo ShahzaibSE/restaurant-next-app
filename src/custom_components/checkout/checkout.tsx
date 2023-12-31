@@ -5,6 +5,12 @@ import {
   RadioGroupItem,
 } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Link from "next/link";
 
 export default function CheckoutComponent() {
   return (
@@ -60,7 +66,7 @@ export default function CheckoutComponent() {
           </RadioGroup>
         </div>
       </div>
-      <div className="bg-white shadow-xl p-12 flex flex-col justify-between items-start gap-8">
+      <div className="bg-white rounded-xl shadow-xl p-12 flex flex-col justify-between items-start gap-8">
         <div className="flex flex-col justify-between items-start gap-4">
           <h1 className="text-black text-xl font-bold tracking-wide">
             Delivery Details
@@ -100,11 +106,53 @@ export default function CheckoutComponent() {
               <span className="text-2xl font-sans font-bold">
                 300
               </span>
-              <span className="text-red-600 font-bold text-2xl"> $</span>
+              <span className="text-red-600 font-bold text-2xl">
+                {" "}
+                $
+              </span>
             </p>
           </div>
           <div>
-            <Button className="rounded-full" variant="destructive" size={"lg"}>Pay Now</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  className="rounded-full"
+                  variant="destructive"
+                  size={"lg"}
+                >
+                  Pay Now
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <div className="flex flex-col justify-between items-center gap-8">
+                  <div className="flex flex-col justify-between items- center gap-8">
+                    <h3 className="text-black text-lg font-bold tracking-wider">
+                      Congratulations! Your Order
+                      Has Been Placed!
+                    </h3>
+                    <Image
+                      className="aspect-auto"
+                      alt="thank you rider image"
+                      width={400}
+                      height={400}
+                      src="/assets/recipe/rider.png"
+                    />
+                    <p className="text-[#A1A1A1] text-md text-center">
+                      Thank you for choosing our
+                      services! Your order has
+                      been successfully placed and
+                      is now being processed. We
+                      appreciate your trust in us
+                      and look forward to serving
+                      you.
+                    </p>
+                  </div>
+                  <div>
+                    <Link href="/"><Button className="rounded-full" variant={"destructive"} size={"lg"}>Return Home</Button></Link>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
