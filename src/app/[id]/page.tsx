@@ -26,6 +26,7 @@ export default async function getProduct({
         imageUrl={product!.imageUrl}
         price={product!.price}
         resturant_name={product!.resturant_name}
+        quantity={1}
       />
     </main>
   );
