@@ -7,6 +7,8 @@ Application is live [here](https://fit-grocer-react-app.vercel.app/)
 First, run the development server:
 
 ```bash
+npm install
+then
 npm run dev
 # or
 yarn dev
